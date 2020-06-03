@@ -13,10 +13,13 @@
 		3A9FEF9624878D8200FC23B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9FEF9424878D8200FC23B6 /* Main.storyboard */; };
 		3A9FEF9824878D8400FC23B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9FEF9724878D8400FC23B6 /* Assets.xcassets */; };
 		3A9FEF9B24878D8400FC23B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9FEF9924878D8400FC23B6 /* LaunchScreen.storyboard */; };
+		3A9FEFA624884B3A00FC23B6 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FEFA524884B3A00FC23B6 /* WeatherModel.swift */; };
+		3A9FEFA824884BD000FC23B6 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FEFA724884BD000FC23B6 /* WeatherData.swift */; };
+		3A9FEFAA2488514500FC23B6 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FEFA92488514500FC23B6 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A9FEF8B24878D8200FC23B6 /* swelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9FEF8B24878D8200FC23B6 /* Swelter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swelter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9FEF8E24878D8200FC23B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9FEF9024878D8200FC23B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A9FEF9224878D8200FC23B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		3A9FEF9724878D8400FC23B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9FEF9A24878D8400FC23B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9FEF9C24878D8400FC23B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9FEFA524884B3A00FC23B6 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		3A9FEFA724884BD000FC23B6 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		3A9FEFA92488514500FC23B6 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +54,7 @@
 		3A9FEF8C24878D8200FC23B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A9FEF8B24878D8200FC23B6 /* swelter.app */,
+				3A9FEF8B24878D8200FC23B6 /* Swelter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +93,9 @@
 		3A9FEFA4248793B500FC23B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A9FEFA524884B3A00FC23B6 /* WeatherModel.swift */,
+				3A9FEFA724884BD000FC23B6 /* WeatherData.swift */,
+				3A9FEFA92488514500FC23B6 /* WeatherManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,7 +117,7 @@
 			);
 			name = swelter;
 			productName = swelter;
-			productReference = 3A9FEF8B24878D8200FC23B6 /* swelter.app */;
+			productReference = 3A9FEF8B24878D8200FC23B6 /* Swelter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,8 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9FEFAA2488514500FC23B6 /* WeatherManager.swift in Sources */,
 				3A9FEF9324878D8200FC23B6 /* ViewController.swift in Sources */,
+				3A9FEFA824884BD000FC23B6 /* WeatherData.swift in Sources */,
 				3A9FEF8F24878D8200FC23B6 /* AppDelegate.swift in Sources */,
+				3A9FEFA624884B3A00FC23B6 /* WeatherModel.swift in Sources */,
 				3A9FEF9124878D8200FC23B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmackle.swelter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swelter;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -332,7 +344,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmackle.swelter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swelter;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
