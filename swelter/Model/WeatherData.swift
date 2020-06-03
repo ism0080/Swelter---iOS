@@ -32,5 +32,5 @@ struct Sys: Codable {
 }
 
 struct Wind: Codable {
-    let speed: Int
+    let speed: Double
 }

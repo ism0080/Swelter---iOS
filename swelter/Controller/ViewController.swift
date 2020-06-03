@@ -20,12 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         searchTextField.delegate = self
+        weatherManager.delegate = self
         
         locationManager.requestLocation()
     }
@@ -62,7 +65,7 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
-            // get weather for city
+            weatherManager.fetchWeather(for: city)
         }
         
         textField.text = ""
@@ -78,11 +81,30 @@ extension ViewController: CLLocationManagerDelegate {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             
-            // get weather for lat/lon
+            weatherManager.fetchWeather(latitude: lat, longitude: lon)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+}
+
+//MARK: - WeatherManagerDelegate
+extension ViewController: WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.cityLabel.text = weather.cityName
+            self.conditionLabel.text = weather.conditionDescription
+            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.temperatureLabel.text = weather.temperatureString
+            self.windSpeedLabel.text = "\(weather.windSpeed)km/hr"
+            self.sunRiseLabel.text = weather.sunriseString
+            self.sunSetLabel.text = weather.sunsetString
+        }
+    }
+    
+    func didFailWithError(with error: Error) {
         print(error)
     }
 }

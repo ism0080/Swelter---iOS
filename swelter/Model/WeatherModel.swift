@@ -16,7 +16,7 @@ struct WeatherModel {
     let temperature: TimeInterval
     let sunriseTime: TimeInterval
     let sunsetTime: Double
-    let windSpeed: Int
+    let windSpeed: Double
     
     init(dataModel: WeatherData) {
         self.conditionId = dataModel.weather[0].id
